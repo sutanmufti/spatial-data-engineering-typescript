@@ -1,3 +1,9 @@
+/**
+ * Written by sutan.co.uk
+ * DISCLAIMER: parts of this code were written by ChatGPT 
+ * 
+ */
+
 import fetch from "cross-fetch";
 import pg from 'pg'
 import { Feature, GeoData } from "./types";

@@ -1,3 +1,9 @@
+/**
+ * Written by sutan.co.uk
+ * 
+ * 
+ */
+
 export interface GeoData {
     "type": string,
     "crs": {
