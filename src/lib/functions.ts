@@ -9,7 +9,7 @@ import { Feature, GeoData } from "./types";
  * 
  * @returns 
  */
-export async function queryData() {
+export async function ExtractData() {
     const res = await fetch('https://skgrange.github.io/www/data/london_low_emission_zones.json')
     const data = <GeoData> await res.json()
     // add validation function to handle error here.
@@ -28,7 +28,7 @@ function getISOstring() {
    * @param geojsonFeatures 
    * @param pool 
    */
-export async function CreateRecord(geojsonFeatures: Feature[], pool: pg.Pool) {
+export async function transformAndLoad(geojsonFeatures: Feature[], pool: pg.Pool) {
     const client = await pool.connect();
 
   

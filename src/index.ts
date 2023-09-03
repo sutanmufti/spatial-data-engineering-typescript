@@ -1,5 +1,5 @@
 import { Pool } from "pg";
-import { CreateRecord, queryData } from "./lib/functions"
+import { transformAndLoad, ExtractData } from "./lib/functions"
 import * as dotenv from 'dotenv';
 dotenv.config();
 
@@ -11,8 +11,10 @@ async function main(){
         password: process.env.POSTGRES_PASSWORD,
         port: Number(process.env.POSTGRES_PORT), // Adjust the port as needed
       });
-    const data = await queryData()
-    await CreateRecord(data.features,pool)
+
+      
+    const data = await ExtractData()
+    await transformAndLoad(data.features,pool)
 
 }
 
